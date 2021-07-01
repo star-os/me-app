@@ -1,1 +1,3 @@
-module "me-app"
+module me-app
+
+go 1.16
