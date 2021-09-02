@@ -1,20 +1,76 @@
 package user
 
-import (
-	"fmt"
-	"github.com/star-os/me-app/file"
-	"github.com/star-os/me-app/item/achievement"
-	"github.com/star-os/me-app/item/asset"
-	"github.com/star-os/me-app/item/consume"
-	"github.com/star-os/me-app/item/equip"
-)
+import "github.com/star-os/me-app/item"
 
+/*
 const (
 	FileName = `userfile`
 )
+*/
 
+// Group 分类，持有一组物品，以及这组物品的分组名
+type Group struct {
+	Name  string
+	Items []item.Item
+}
+
+func NewGroup() *Group {
+	return &Group{}
+}
+
+// SetName 设置分组名称
+func (g Group) SetName() {
+
+}
+
+// New 向一组物品中添加一个新的物品
+func (g Group) New() {
+
+}
+
+// Delete 删除一组物品中的一个物品
+func (g Group) Delete() {
+	// 想想，怎么删除一个指定的物品
+}
+
+// Sell 出售一个物品
+func (g Group) Sell() {
+
+}
+
+// Rent 出租一个物品
+func (g Group) Rent() {
+
+}
+
+// User 用户
 type User struct {
-	Gen          int64 // 用于记录当前的代际，避免新文件覆盖老文件
+	UserName string  // 用户名
+	Groups   []Group // 用户持有物品的所有分类
+}
+
+func NewUser() *User {
+	return &User{}
+}
+
+// NewGroup 添加一个新的分类
+func (u User) NewGroup() {
+
+}
+
+// DeleteGroup 删除一个分类
+func (u User) DeleteGroup() {
+
+}
+
+// SetUserName 设置用户名
+func (u User) SetUserName() {
+
+}
+
+/* 下面的内容都是老黄历了
+type User struct {
+	// Gen          int64 // 用于记录当前的代际，避免新文件覆盖老文件
 	Equips       []equip.Equip
 	Assets       []asset.Asset
 	Achievements []achievement.Achievement
@@ -76,3 +132,4 @@ func (u *User) AddItem(item interface{}) {
 		return
 	}
 }
+*/
